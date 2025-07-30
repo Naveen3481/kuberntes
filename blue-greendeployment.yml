@@ -1,0 +1,64 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blue-nginx-deployment
+  labels:
+    type: proxy
+    author: intelliqit
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      type: proxy
+  template:
+    metadata:
+      name: nginx-pod
+      labels:
+        type: proxy
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.24
+          ports:
+            - containerPort: 80
+              hostPort: 9090
+---
+
+        new file:   mytomcat/templates/tests/test-connection.yaml
+        new file:   mytomcat/values.yaml
+        new file:   recreateeupdatestrategy.yml
+        new file:   rollingupdatesandrollback.yml
+        new file:   statefulset.yml
+        new file:   volumes/emptydirvolume.yml
+        new file:   volumes/pvandpvcandpodandservice.yml
+
+naveenb3481@cloudshell:~/kuberntes (global-thinker-466611-m1)$ git commit -m "a"
+[main 54dff0d] a
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blue-nginx-deployment
+  labels:
+    type: proxy
+    author: intelliqit
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      type: proxy
+  template:
+    metadata:
+      name: nginx-pod
+      labels:
+        type: proxy
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.25
+          ports:
+            - containerPort: 80
+              hostPort: 9090
+---             
+
