@@ -1,0 +1,9 @@
+kubecctl auth can-i list pods --as=username -n=namespacename
+kubectl auth can-i list services 
+kubectl can-i list deployments
+get
+delete
+default namespace takes place when we wont give specific namespace
+create
+list 
+  
